@@ -190,6 +190,4 @@ test('get size - can exceed maxSize', function (t) {
   c.set(7, true)
 
   t.is(c.size, 7)
-
-  console.log('c', c)
 })
