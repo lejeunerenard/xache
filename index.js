@@ -18,6 +18,10 @@ module.exports = class MaxCache {
     }
   }
 
+  get size() {
+    return this._latest.size + this._oldest.size + this._retained.size
+  }
+
   *[Symbol.iterator]() {
     for (const it of [this._latest, this._oldest, this._retained]) {
       yield* it

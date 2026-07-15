@@ -159,3 +159,19 @@ test('ongc', function (t) {
   c.set(7, true)
   c.set(8, true)
 })
+
+test('get size', function (t) {
+  const c = new Xache({
+    maxSize: 4
+  })
+
+  c.set(1, true)
+  c.set(2, true)
+
+  t.is(c.size, 2)
+
+  c.set(3, true)
+  c.set(4, true)
+
+  t.is(c.size, 4)
+})
